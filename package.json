@@ -11,6 +11,14 @@
     "url": "https://github.com/agreen757/restaurantupdater.git"
   },
   "author": "Adrian Green",
+  "dependences": {
+		 "swig" : "1.1.0",
+		 "express" : "3.3.5",
+		 "request" : "2.25.0",
+		 "mongodb" : "1.3.19",	
+		 "request" : "2.27.0",
+		 "socket.io" : "0.9.16"	 	
+	},					
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/agreen757/restaurantupdater/issues"
