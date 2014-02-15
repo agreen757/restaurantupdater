@@ -1,0 +1,19 @@
+{
+  "name": "restaurantupdater",
+  "version": "0.0.1",
+  "description": "Updates restaurant wait times in real time",
+  "main": "maps.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agreen757/restaurantupdater.git"
+  },
+  "author": "Adrian Green",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agreen757/restaurantupdater/issues"
+  },
+  "homepage": "https://github.com/agreen757/restaurantupdater"
+}
