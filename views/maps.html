@@ -1,0 +1,65 @@
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      html, body, #map-canvas {
+        height: 100%;
+        margin: 0px;
+        padding: 0px
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io.connect('http://ec2-54-197-247-227.compute-1.amazonaws.com/');
+        function initialize() {
+
+        var myLatlng = new google.maps.LatLng(40.6978959,-73.9819846);
+        var mapOptions = {
+        zoom: 15,
+        center: myLatlng
+        }
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+        mapOptions);
+
+        socket.on('data', function(data){
+        console.log(data.name);
+    
+        var marker = new google.maps.Marker({
+            position: new google.maps.LatLng(data.lat,data.long),
+            map: map,
+            animation: google.maps.Animation.DROP,
+            title: data.name    
+            })
+    
+        })
+
+        }
+        //silo to hold map locations
+        var silo = [
+            ["studio",40.6966237,-73.9855068],
+            ["playground",40.6985698,-73.9855068],
+            ["police",40.6962435,-73.9845948]
+        ];
+        
+        //function to execute loop to set markers on multiple locations
+        function setMarkers(map, locations){
+            for(var i=0;i<locations.length;i++){
+                var stores = locations[i];
+                var myLatlng = new google.maps.Latlng(stores[1],stores[2]);
+                //set markers
+                
+            }
+        }
+        
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+        google.maps.visualRefresh = true;
+    </script>
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
