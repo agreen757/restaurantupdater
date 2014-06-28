@@ -31,12 +31,24 @@ var io = require('socket.io').listen(server);
 
 //Open DB connection
 MongoClient.connect(MONGOHQ_URL, function(err, db){
+    
+//**********MAIN LANDING PAGE    
+    
 app.get('/', function(request, response){
     response.render('index');
 });
     
+// *********HOW UPDATES WILL HAPPEN FROM THE USE
+    
 app.get('admin', function(request, response){
     response.render('writer');
+})
+
+//  *********ACCEPT POSTS FROM USER USING ADMIN PANEL
+app.post('update', function(reqest, response){
+    
+    console.log(request);
+    
 })
     //Using sockets to interract with the web page
     io.sockets.on('connection', function(socket){
