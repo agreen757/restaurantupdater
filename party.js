@@ -40,7 +40,7 @@ app.get('/', function(request, response){
     
 // *********HOW UPDATES WILL HAPPEN FROM THE USE
     
-app.get('admin', function(request, response){
+app.get('/admin', function(request, response){
     response.render('writer');
 })
 
