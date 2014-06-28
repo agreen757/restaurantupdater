@@ -34,6 +34,10 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
 app.get('/', function(request, response){
     response.render('index');
 });
+    
+app.get('/admin', function(request, response){
+    response.render('writer');
+})
     //Using sockets to interract with the web page
     io.sockets.on('connection', function(socket){
 	socket.on('ready', function(data){
