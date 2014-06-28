@@ -45,7 +45,7 @@ app.get('/admin', function(request, response){
 })
 
 //  *********ACCEPT POSTS FROM USER USING ADMIN PANEL
-app.post('update', function(reqest, response){
+app.post('/update', function(reqest, response){
     
     console.log(request);
     
