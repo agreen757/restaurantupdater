@@ -35,7 +35,7 @@ app.get('/', function(request, response){
     response.render('index');
 });
     
-app.get('/admin', function(request, response){
+app.get('admin', function(request, response){
     response.render('writer');
 })
     //Using sockets to interract with the web page
