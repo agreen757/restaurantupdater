@@ -32,7 +32,7 @@ var io = require('socket.io').listen(server);
 //Open DB connection
 MongoClient.connect(MONGOHQ_URL, function(err, db){
 app.get('/', function(request, response){
-    response.render('party');
+    response.render('index');
 });
     //Using sockets to interract with the web page
     io.sockets.on('connection', function(socket){

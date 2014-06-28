@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#section-1 -->
+<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" style=""><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHNDRiZXcydjJySE0/bootstrap.min.adrian.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+            just {
+                padding-right: 100px;
+            }
+            #results {
+              width: 80%;
+              margin: 10px;
+              background: #b2b2b2;
+              float: left;
+              width: 120px;
+              height: 120px;
+            }
+            p.more{
+              width: 150px;
+              height: 120px;
+              display: table-cell;
+              vertical-align:middle;
+              text-align:center;
+            }
+        </style>
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHX19TYW5MWWNDT1E/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHX19TYW5MWWNDT1E/main.css">
+
+       <!-- <script src="./index_files/modernizr-2.6.2-respond-1.1.0.min.js"></script> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>
+        var socket = io.connect('http://ec2-54-197-247-227.compute-1.amazonaws.com/');
+        socket.on('update', function(data){
+            console.log(data);
+            var silo = data.update.text.split(",");
+            var title = silo[0];
+            var wep = data.update.created_at.split(" ");
+            lastUpdate = wep[0]+" "+wee[1]+" "+wee[2]+" "+wee[3];
+            var time = silo[1];
+    
+            //Figure this out - we are unable to update as well as we can load - time and lastUpdate arent showing
+    
+            //since this will happen sequentially i should not need an if
+            
+            $("div:contains('"+title+"')").fadeOut(1000);
+            
+            //then we proceed as normal
+            var html = "<div id=\"results\"><p class=\"more\">"+title+"<br>"+time+"<br>"+lastUpdate+"</p></div>";
+            $(html).hide().appendTo(document.body).fadeIn(1000);
+        })
+        socket.on('load', function(data){
+            console.log(data);
+            var lastUpdate;
+            if(data.update.lastUpdate == null){
+              lastUpdate = "No time info";
+            }
+            else{
+               var wee = data.update.lastUpdate.split(" ");
+               lastUpdate = wee[0]+" "+wee[1]+" "+wee[2]+" "+wee[3];
+            }
+            $("div:contains('"+data.update.name+"')").fadeOut(1000);
+    
+            var html = "<div id=\"results\"><p class=\"more\">"+data.update.name+"<br>"+lastUpdate+"</p></div>";
+            $(html).hide().appendTo(document.body).fadeIn(1000);
+        })
+    </script>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#">Party Of Me prototype</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav" id="top-nav">
+                            <li class="just" style="padding-left:700px"><a href="http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#section-0">FILTER</a></li>
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+
+
+          <!--  <footer>
+                <p>© Adrian Green 2013</p>
+            </footer> -->
+
+        </div> <!-- /container -->
+
+        <script src="https://googledrive.com/host/0B_HfjBN-_JRHa29HZHN5eERoSVk/jquery-1.8.3.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.3.min.js"><\/script>')</script>
+
+        <script src="https://googledrive.com/host/0B_HfjBN-_JRHa29HZHN5eERoSVk/bootstrap.min.js"></script>
+
+        <script src="https://googledrive.com/host/0B_HfjBN-_JRHR05wMjZrS2FPckk/plugins.js"></script>
+        <script src="https://googledrive.com/host/0B_HfjBN-_JRHR05wMjZrS2FPckk/main.js"></script>
+        <script>
+             $('#top-nav').onePageNav({
+                 currentClass: 'active',
+                 changeHash: true,
+                 scrollSpeed: 1200
+            });
+        </script>
+        <script>
+          //on ready - post to the main to execute initial emit of db contents
+          $(document).ready(function(){
+            var socket = io.connect('http://ec2-54-197-247-227.compute-1.amazonaws.com/');
+            socket.on('connect', function(){
+               socket.emit('ready', 'Hello Server')
+            })
+          })
+        </script>
+
+
+    
+
+</body></html>
