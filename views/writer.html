@@ -1,8 +1,77 @@
-<h1>Welcome to the Writer</h1>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHNDRiZXcydjJySE0/bootstrap.min.adrian.css">
+        <style>
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
+            }
+            just {
+                padding-right: 100px;
+            }
+            #results {
+              width: 80%;
+              margin: 10px;
+              background: #b2b2b2;
+              float: left;
+              width: 120px;
+              height: 120px;
+            }
+            p.more{
+              width: 150px;
+              height: 120px;
+              display: table-cell;
+              vertical-align:middle;
+              text-align:center;
+            }
+        </style>
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHX19TYW5MWWNDT1E/bootstrap-responsive.min.css">
+        <link rel="stylesheet" href="https://googledrive.com/host/0B_HfjBN-_JRHX19TYW5MWWNDT1E/main.css">
+
+       <!-- <script src="./index_files/modernizr-2.6.2-respond-1.1.0.min.js"></script> -->
+        <script src="/socket.io/socket.io.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    </head>
+<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#">Party Of Me prototype</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav" id="top-nav">
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+<center>
+<h1>Your Admin Dashboard</h1>
 <h3>Use the area below to update</h3>
 
 <form
   method="post"
   action="/update" >
-<input type="text" name="time">
+<select>
+  <option value="volvo">Ted & Honey</option>
+  <option value="saab">Wild</option>
+  <option value="mercedes">Boar</option>
+  <option value="audi">Cafe Pedlar</option>
+</select>
+<select>
+  <option value="5">5 minutes</option>
+  <option value="10">10 minutes</option>
+  <option value="20">20 minutes</option>
+  <option value="40">40 minutes</option>
+</select><br>
 <input type="submit" value="Submit">
+</center>
