@@ -1,0 +1,51 @@
+<title>PartyOf.me</title>
+<script src="/socket.io/socket.io.js"></script>
+<style type="text/css">
+    #results {
+      width: 80%;
+      margin: 10px;
+      background: #b2b2b2;
+      float: left;
+      width: 120px;
+      height: 120px;
+    }
+    p.more{
+      width: 150px;
+      height: 120px;
+      display: table-cell;
+      vertical-align:middle;
+      text-align:center;
+    }
+    navbar {
+        position: fixed;
+        right: 0;
+        left: 0;
+        margin-bottom: 0;
+    }
+</style>
+<script>
+    var socket = io.connect('http://ec2-54-197-247-227.compute-1.amazonaws.com/');
+    socket.on('update', function(data){
+        var html = "<div id=\"results\"><p class=\"more\">"+data.update+"</p></div>";
+        $(html).hide().appendTo(document.body).fadeIn(1000);
+    })
+</script>
+<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#">PartyOfMe</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav" id="top-nav">
+                            <li class="active"><a href="http://ec2-54-224-80-15.compute-1.amazonaws.com:8080/#section-0">Filter</a></li>
+                        </ul>
+                        
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+<h2><center>PartyOf.me prototype</center></h2>
