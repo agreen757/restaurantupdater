@@ -20,7 +20,7 @@ var app = express();
 app.engine('html', cons.swig);
 app.set('view engine', 'html');
 app.set('views', __dirname+"/views");
-
+app.use('/static', express.static(__dirname + '/public'));
 app.use(express.cookieParser());
 app.use(express.session({secret: '1234567890ADRIAN'}));
 app.use(express.bodyParser());
