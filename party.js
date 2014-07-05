@@ -41,7 +41,7 @@ app.get('/', function(request, response){
 //**********MAIN LANDING PAGE FOR USERS  
     
 app.get('/main', function(request, response){
-    response.render('index');
+    response.render('landing');
 });
     
 // *********HOW UPDATES WILL HAPPEN FROM THE USE
