@@ -35,7 +35,7 @@ MongoClient.connect(MONGOHQ_URL, function(err, db){
 //*********INTRO PAGE
     
 app.get('/', function(request, response){
-    response.render('landing');
+    response.render('index');
 });
     
 //**********MAIN LANDING PAGE FOR USERS  
