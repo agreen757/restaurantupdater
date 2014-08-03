@@ -44,6 +44,11 @@ app.get('/main', function(request, response){
     response.render('index');
 });
     
+app.post('/email', function(request, response){
+    request.send("thankyou");
+    
+})
+    
 // *********HOW UPDATES WILL HAPPEN FROM THE USE
     
 app.get('/admin', function(request, response){
