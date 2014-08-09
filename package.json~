@@ -17,11 +17,6 @@
 		 "request" : "2.25.0",
 		 "mongodb" : "1.3.19",	
 		 "request" : "2.27.0",
-		 "body-parser": "*",
-		 "cookie-parser": "*",
-		 "twit": "*",
-		 "consolidate": "*",
-		 "swig": "*",
 		 "socket.io" : "0.9.16"	 	
 	},					
   "license": "ISC",

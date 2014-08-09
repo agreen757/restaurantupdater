@@ -6,6 +6,8 @@ var MONGOHQ_URL="mongodb://worker:walton@oceanic.mongohq.com:10048/partyofme";
 var io = require('socket.io');
 var cons = require('consolidate');
 var fs = require('fs');
+var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
 var chokidar = require('chokidar');
 var twit = require('twit');
 var nodemailer = require('nodemailer');
@@ -21,10 +23,10 @@ app.engine('html', cons.swig);
 app.set('view engine', 'html');
 app.set('views', __dirname+"/views");
 app.use(express.static(__dirname + '/public'));
-app.use(express.cookieParser());
-app.use(express.session({secret: '1234567890ADRIAN'}));
-app.use(express.bodyParser());
-app.use(express.methodOverride());
+app.use(cookieParser());
+//app.use(express.session({secret: '1234567890ADRIAN'}));
+app.use(bodyParser());
+//app.use(express.methodOverride());
 
 var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
@@ -46,6 +48,8 @@ app.get('/main', function(request, response){
     
 app.post('/email', function(request, response){
     response.send("thank you");
+    console.log(request.body);
+    //db.collection('users').update({email:req.body.email})
     
 })
     
