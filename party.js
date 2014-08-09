@@ -46,10 +46,16 @@ app.get('/main', function(request, response){
     response.render('index');
 });
     
-app.post('/email', function(request, response){
-    response.send("thank you");
-    console.log(request.body);
-    //db.collection('users').update({email:req.body.email})
+app.post('/email', function(req, res){
+    res.redirect('/');
+    console.log(req.body);
+    var email = req.body.email;
+    var name = req.body.name;
+    var venue = req.body.venue;
+    db.collection('users').update({email:email}, {$set:{email:email,name:name,venue:venue}},{upsert:true}, function(err,res){
+        if(err){console.log(err)}
+        console.log(res);
+    })
     
 })
     
