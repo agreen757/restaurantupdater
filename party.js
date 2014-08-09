@@ -110,7 +110,7 @@ app.post('/update', function(request, response){
 	    })
 	}
     })
-    server.listen(8090);
+    server.listen(80);
     console.log("Express server started on 8090");
 })
 
