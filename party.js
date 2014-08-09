@@ -45,7 +45,7 @@ app.get('/main', function(request, response){
 });
     
 app.post('/email', function(request, response){
-    request.send("thankyou");
+    response.send("thank you");
     
 })
     
