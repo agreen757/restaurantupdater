@@ -644,6 +644,24 @@
 		padding-top: 3em;
 	}
 
+    #thanks {
+        background-image: url('../images/intro3.jpg');
+    }
+
+     #info {
+            height: 220px;
+            width: 232px;
+            background-color: #eee;
+            display: block;
+            float: left;
+            position: absolute;
+            border-color: white;
+            margin-top: 100px;
+            padding-top: 100px;
+            margin-left: 80px;
+            
+        }
+
 	#logo {
 		position: absolute;
 		left: 1em;

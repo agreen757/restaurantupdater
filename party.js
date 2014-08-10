@@ -47,7 +47,7 @@ app.get('/main', function(request, response){
 });
     
 app.post('/email', function(req, res){
-    res.redirect('/');
+    res.render('thanks');
     console.log(req.body);
     var email = req.body.email;
     var name = req.body.name;
@@ -63,6 +63,10 @@ app.post('/email', function(req, res){
     
 app.get('/admin', function(request, response){
     response.render('writer');
+})
+
+app.get('/thanks', function(req,res){
+    res.render('thanks')
 })
 
 //  *********ACCEPT POSTS FROM USER USING ADMIN PANEL
@@ -110,7 +114,7 @@ app.post('/update', function(request, response){
 	    })
 	}
     })
-    server.listen(80);
+    server.listen(8090);
     console.log("Express server started on 8090");
 })
 
