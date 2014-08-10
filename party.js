@@ -114,8 +114,8 @@ app.post('/update', function(request, response){
 	    })
 	}
     })
-    server.listen(8090);
-    console.log("Express server started on 8090");
+    server.listen(80);
+    console.log("Express server started on 80");
 })
 
 /*sort out how to load many locations with updated information
