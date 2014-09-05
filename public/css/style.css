@@ -646,6 +646,8 @@
 
     #thanks {
         background-image: url('../images/intro3.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
     }
 
      #info {
@@ -675,6 +677,37 @@
 			font-size: 1.25em;
 		}
 	
+    #navleft {
+		position: absolute;
+		left: 8.5em;
+        clear: both;
+		top: 0;
+		height: 3em;
+		line-height: 3em;
+        color: black;
+        background-color: #E5E5E5;
+	}
+
+		#navleft ul {
+			margin: 0;
+		}
+
+			#navleft ul li {
+				display: inline-block;
+				margin-left: 0.5em;
+				font-size: 0.9em;
+			}
+			
+				#navleft ul li a {
+					display: block;
+					color: inherit;
+					text-decoration: none;
+					height: 3em;
+					line-height: 3em;
+					padding: 0 0.5em 0 0.5em;
+					outline: 0;
+				}
+
 	#nav {
 		position: absolute;
 		right: 0.5em;

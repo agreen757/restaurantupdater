@@ -46,6 +46,11 @@ app.get('/main', function(request, response){
     response.render('index');
 });
     
+    
+app.get('/business', function(request,response){
+    response.render('business');
+})
+    
 app.post('/email', function(req, res){
     res.render('thanks');
     console.log(req.body);

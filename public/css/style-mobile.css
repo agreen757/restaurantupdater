@@ -79,6 +79,12 @@
 		padding-top: 2.5em;
 	}
 
+    #navleft{
+        left:0px;
+        height: 2.5em;
+		line-height: 2.5em;
+    }
+
 	#logo {
 		text-align: center;
 		position: relative;
