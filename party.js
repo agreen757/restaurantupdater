@@ -57,11 +57,15 @@ app.post('/email', function(req, res){
     var email = req.body.email;
     var name = req.body.name;
     var venue = req.body.venue;
-    db.collection('users').update({email:email}, {$set:{email:email,name:name,venue:venue}},{upsert:true}, function(err,res){
+    var address = req.body.address;
+    db.collection('users').update({email:email}, {$set:{email:email,name:name,venue:venue,address:address}},{upsert:true}, function(err,res){
         if(err){console.log(err)}
         console.log(res);
     })
     
+})
+app.get('/email', function(req,res){
+    res.redirect('/')
 })
     
 // *********HOW UPDATES WILL HAPPEN FROM THE USE
